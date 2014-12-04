@@ -13,7 +13,7 @@ html, body, #map-canvas {
 }
 
 article {
-    float: left;
+    float: right;
     width: 33.3333%;
     min-width: 100px;
     position: relative;
