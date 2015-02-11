@@ -41,6 +41,7 @@
                     jsonp: 'callback',
                     url: "http://geo.oiorest.dk/takstzoner/" + results[0].geometry.location.k + "," + results[0].geometry.location.B + ".json",
                     success: function (response) {
+                        $("#homeTakst").empty();
                         $("#homeTakst").append("<span>Takstzone: " + response.nr + ". Operatør: " + response.operatør.navn + "</span>")
                     }
                 });
