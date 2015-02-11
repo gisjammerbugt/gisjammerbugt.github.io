@@ -28,13 +28,22 @@
 
         // Set home marker from address
         geoCoder = new google.maps.Geocoder();
-        geoCoder.geocode({ 'address': origin}, function (results, status) {
+        geoCoder.geocode({'address': origin}, function (results, status) {
             if (status === google.maps.GeocoderStatus.OK) {
                 homeMarker = new google.maps.Marker({
                     map: map,
                     position: results[0].geometry.location
                 });
                 bounds.extend(results[0].geometry.location);
+                // Get takstzone
+                $.ajax({
+                    dataType: 'jsonp',
+                    jsonp: 'callback',
+                    url: "http://geo.oiorest.dk/takstzoner/" + results[0].geometry.location.k + "," + results[0].geometry.location.B + ".json",
+                    success: function (response) {
+                        $("#homeTakst").append("<span>Takstzone: " + response.nr + ". Operatør: " + response.operatør.navn + "</span>")
+                    }
+                });
             } else {
                 alert('Kunne ikke finde adresse: ' + status);
             }
@@ -44,7 +53,7 @@
         directionsService = new google.maps.DirectionsService();
         directionsDisplay = new google.maps.DirectionsRenderer();
         directionsDisplay.setMap(map);
-        directionsDisplay.setOptions({ suppressMarkers: true });
+        directionsDisplay.setOptions({suppressMarkers: true});
 
         // Clean up the list
         $('#tweetContainer').empty();
@@ -107,24 +116,36 @@
                     }
                     $('#tweetContainer').append(
                         '<section><a href="javascript:void(0)" class="list-group-item ' + cclass + '" data-id=\"' +
-                            value.custom.gid +
-                            '">' +
-                            '<div class="number">' + (index + 1) + '</div>' +
-                            '<h4 class="list-group-item-heading">' +
-                            value.leg.distance.text +
-                            '</h4>' +
-                            '<p class="list-group-item-text">' +
-                            value.custom.speciale +
-                            '<br>' +
-                            value.custom.navn +
-                            '<br>' +
-                            value.request.destination +
-                            '</p>' +
-                            '<p class="list-group-item-text">' +
+                        value.custom.gid +
+                        '">' +
+                        '<div class="number">' + (index + 1) + '</div>' +
+                        '<h4 class="list-group-item-heading">' +
+                        value.leg.distance.text +
+                        '</h4>' +
+                        '<p class="list-group-item-text">' +
+                        value.custom.speciale +
+                        '<br>' +
+                        value.custom.navn +
+                        '<br>' +
+                        value.request.destination +
+                        '<br>' +
+                        '<div id="takst' + index + '"></div>' +
+                        '</p>' +
+                        '<p class="list-group-item-text">' +
                             //highlighter(value, tweet.properties.text) +
-                            '</p>' +
-                            '</a></section>'
+                        '</p>' +
+                        '</a></section>'
                     );
+                    // Get takstzone
+                    $.ajax({
+                        dataType: 'jsonp',
+                        jsonp: 'callback',
+                        url: "http://geo.oiorest.dk/takstzoner/" + value.leg.end_location.k + "," + value.leg.end_location.B + ".json",
+                        success: function (response) {
+                            $("#takst" + index).append("<span>Takstzone: " + response.nr + ". Operatør: " + response.operatør.navn + "</span>")
+                        }
+                    });
+
                     // Add markers
                     ll = new google.maps.LatLng(value.leg.end_location.k, value.leg.end_location.B);
                     marker = new google.maps.Marker({
@@ -134,11 +155,11 @@
                     });
                     infowindow = new google.maps.InfoWindow({
                         content: "<div>" +
-                            value.leg.distance.text + "<br>" +
-                            value.custom.speciale + "<br>" +
-                            value.custom.navn + "<br>" +
-                            value.request.destination + "<br>" +
-                            "</div>"
+                        value.leg.distance.text + "<br>" +
+                        value.custom.speciale + "<br>" +
+                        value.custom.navn + "<br>" +
+                        value.request.destination + "<br>" +
+                        "</div>"
                     });
 
                     google.maps.event.addListener(marker, 'click', (function (marker, infowindow) {
