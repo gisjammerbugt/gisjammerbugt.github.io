@@ -83,3 +83,6 @@ a.list-group-item.green:hover {
     font-size: 18px;
     font-weight: bold;
 }
+.rejseplan-link {
+    margin-top: 5px;
+}
