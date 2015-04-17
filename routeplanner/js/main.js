@@ -109,7 +109,6 @@
                     return 0;
                 });
                 $.each(list, function (index, value) {
-                    console.log(value.leg.distance)
                     if (index === 0) {
                         cclass = "green";
                     } else if (value.leg.distance.value > 50000) {
@@ -134,10 +133,7 @@
                         '<br>' +
                         'Befodringspris: ' + (Math.round(config.befording * (value.leg.distance.value/1000))) + ' kr.' +
                         '<br>' +
-                        '<div id="takst' + index + '"></div>' +
-                        '</p>' +
-                        '<p class="list-group-item-text">' +
-                            //highlighter(value, tweet.properties.text) +
+                        '<div class="rejseplan-link" id="takst' + index + '"></div>' +
                         '</p>' +
                         '</a></section>'
                     );
@@ -147,7 +143,7 @@
                         jsonp: 'callback',
                         url: "http://geo.oiorest.dk/holdepladser/" + value.leg.end_location.k + "," + value.leg.end_location.B + ".json",
                         success: function (response) {
-                            $("#takst" + index).append("<br><span><a target='_blank' href='http://www.rejseplanen.dk/bin/query.exe/mn?S=" + homeHoldepladsNr + "&start=yes&Z=" + response[0].holdepladsnr +" '>Rejseplan til " + response[0].navn + "</a></span>")
+                            $("#takst" + index).append("<span><a target='_blank' href='http://www.rejseplanen.dk/bin/query.exe/mn?S=" + homeHoldepladsNr + "&start=yes&Z=" + response[0].holdepladsnr +" '>Rejseplan til " + response[0].navn + "</a></span>")
                         }
                     });
 
