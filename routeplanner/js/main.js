@@ -3,7 +3,7 @@
     var map, directionsDisplay, directionsService, list = [], autocomplete, bar, modal, specArr = [], markers = [], homeMarker, geoCoder, bounds;
 
     function search(origin) {
-        var i = 0, l, cclass, arr = [], marker, infowindow, ll;
+        var i = 0, l, cclass, arr = [], marker, infowindow, ll, homeHoldepladsNr;
         bounds = new google.maps.LatLngBounds();
 
         // Filter and sort the destinations
@@ -39,10 +39,11 @@
                 $.ajax({
                     dataType: 'jsonp',
                     jsonp: 'callback',
-                    url: "http://geo.oiorest.dk/takstzoner/" + results[0].geometry.location.k + "," + results[0].geometry.location.B + ".json",
+                    url: "http://geo.oiorest.dk/holdepladser/" + results[0].geometry.location.k + "," + results[0].geometry.location.B + ".json",
                     success: function (response) {
                         $("#homeTakst").empty();
-                        $("#homeTakst").append("<span>Takstzone: " + response.nr + ". Operatør: " + response.operatør.navn + "</span>")
+                        $("#homeTakst").append("<span>Holdeplads: " + response[0].navn + "</span>")
+                        homeHoldepladsNr = response[0].holdepladsnr;
                     }
                 });
             } else {
@@ -108,6 +109,7 @@
                     return 0;
                 });
                 $.each(list, function (index, value) {
+                    console.log(value.leg.distance)
                     if (index === 0) {
                         cclass = "green";
                     } else if (value.leg.distance.value > 50000) {
@@ -130,6 +132,8 @@
                         '<br>' +
                         value.request.destination +
                         '<br>' +
+                        'Befodringspris: ' + (Math.round(config.befording * (value.leg.distance.value/1000))) + ' kr.' +
+                        '<br>' +
                         '<div id="takst' + index + '"></div>' +
                         '</p>' +
                         '<p class="list-group-item-text">' +
@@ -141,9 +145,9 @@
                     $.ajax({
                         dataType: 'jsonp',
                         jsonp: 'callback',
-                        url: "http://geo.oiorest.dk/takstzoner/" + value.leg.end_location.k + "," + value.leg.end_location.B + ".json",
+                        url: "http://geo.oiorest.dk/holdepladser/" + value.leg.end_location.k + "," + value.leg.end_location.B + ".json",
                         success: function (response) {
-                            $("#takst" + index).append("<span>Takstzone: " + response.nr + ". Operatør: " + response.operatør.navn + "</span>")
+                            $("#takst" + index).append("<br><span><a target='_blank' href='http://www.rejseplanen.dk/bin/query.exe/mn?S=" + homeHoldepladsNr + "&start=yes&Z=" + response[0].holdepladsnr +" '>Rejseplan til " + response[0].navn + "</a></span>")
                         }
                     });
 
