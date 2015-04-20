@@ -131,7 +131,7 @@
                         '<br>' +
                         value.request.destination +
                         '<br>' +
-                        'Befordringspris: ' + <b>(Math.round(config.befording * (value.leg.distance.value/1000))) + ' kr.' </b> +
+                        'Befordringspris: ' + (Math.round(config.befording * (value.leg.distance.value/1000))) + ' kr.' +
                         '<br>' +
                         '<div class="rejseplan-link" id="takst' + index + '"></div>' +
                         '</p>' +
