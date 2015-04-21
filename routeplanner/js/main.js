@@ -43,7 +43,7 @@
                     success: function (response) {
                         $("#homeTakst").empty();
                         $("#homeTakst").append("<span>Holdeplads: " + response[0].navn + "</span>")
-                        homeHoldepladsNr = response[0].holdepladsnr;
+                        homeHoldepladsNr = response[0].navn;
                     }
                 });
             } else {
@@ -143,7 +143,7 @@
                         jsonp: 'callback',
                         url: "http://geo.oiorest.dk/holdepladser/" + value.leg.end_location.k + "," + value.leg.end_location.B + ".json",
                         success: function (response) {
-                            $("#takst" + index).append("<span><a target='_blank' href='http://www.rejseplanen.dk/bin/query.exe/mn?S=" + homeHoldepladsNr + "&start=yes&Z=" + response[0].holdepladsnr +" '>Rejseplan til " + response[0].navn + "</a></span>")
+                            $("#takst" + index).append("<span><a target='_blank' href='http://www.rejseplanen.dk/bin/query.exe/mn?S=" + homeHoldepladsNr + "&start=yes&Z=" + response[0].navn +" '>Rejseplan til " + response[0].navn + "</a></span>")
                         }
                     });
 
