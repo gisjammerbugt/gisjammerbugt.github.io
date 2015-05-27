@@ -37,13 +37,13 @@
                 bounds.extend(results[0].geometry.location);
                 // Get takstzone
                 $.ajax({
-                    dataType: 'jsonp',
-                    jsonp: 'callback',
-                    url: "http://geo.oiorest.dk/holdepladser/" + results[0].geometry.location.lat() + "," + results[0].geometry.location.lng() + ".json",
+                    dataType: 'json',
+                    url: "https://eu1.mapcentia.com/cgi/proxy.cgi?url=" + encodeURIComponent(config.rejseplanenAPI + "/stopsNearby?coordX=" + results[0].geometry.location.lat() + "&coordY=" + results[0].geometry.location.lng() + "&maxNumber=1&format=json"),
+                    //url: "http://geo.oiorest.dk/holdepladser/" + results[0].geometry.location.lat()/1000000 + "," + results[0].geometry.location.lng() + ".json",
                     success: function (response) {
                         $("#homeTakst").empty();
-                        $("#homeTakst").append("<span>Holdeplads: " + response[0].navn + "</span>")
-                        homeHoldepladsNr = response[0].navn;
+                        $("#homeTakst").append("<span>Holdeplads: " + response.LocationList.StopLocation.name + "</span>")
+                        homeHoldepladsNr = response.LocationList.StopLocation.id;
                     }
                 });
             } else {
@@ -139,11 +139,11 @@
                     );
                     // Get takstzone
                     $.ajax({
-                        dataType: 'jsonp',
-                        jsonp: 'callback',
-                        url: "http://geo.oiorest.dk/holdepladser/" + value.leg.end_location.lat() + "," + value.leg.end_location.lng() + ".json",
+                        dataType: 'json',
+                        url: "https://eu1.mapcentia.com/cgi/proxy.cgi?url=" + encodeURIComponent(config.rejseplanenAPI + "/stopsNearby?coordX=" + value.leg.end_location.lat() + "&coordY=" + value.leg.end_location.lng() + "&maxNumber=1&format=json"),
+                        //url: "http://geo.oiorest.dk/holdepladser/" + value.leg.end_location.lat() + "," + value.leg.end_location.lng() + ".json",
                         success: function (response) {
-                            $("#takst" + index).append("<span><a target='_blank' href='http://www.rejseplanen.dk/bin/query.exe/mn?S=" + homeHoldepladsNr + "&start=yes&Z=" + response[0].navn +" '>Rejseplan til " + response[0].navn + "</a></span>")
+                            $("#takst" + index).append("<span><a target='_blank' href='http://www.rejseplanen.dk/bin/query.exe/mn?S=" + homeHoldepladsNr + "&start=yes&Z=" + response.LocationList.StopLocation.id +" '>Rejseplan til " + response.LocationList.StopLocation.name + "</a></span>")
                         }
                     });
 
