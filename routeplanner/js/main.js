@@ -39,7 +39,7 @@
                 $.ajax({
                     dataType: 'jsonp',
                     jsonp: 'callback',
-                    url: "http://geo.oiorest.dk/holdepladser/" + results[0].geometry.location.k + "," + results[0].geometry.location.B + ".json",
+                    url: "http://geo.oiorest.dk/holdepladser/" + results[0].geometry.location.lat() + "," + results[0].geometry.location.lng() + ".json",
                     success: function (response) {
                         $("#homeTakst").empty();
                         $("#homeTakst").append("<span>Holdeplads: " + response[0].navn + "</span>")
@@ -141,15 +141,14 @@
                     $.ajax({
                         dataType: 'jsonp',
                         jsonp: 'callback',
-                        url: "http://geo.oiorest.dk/holdepladser/" + value.leg.end_location.k + "," + value.leg.end_location.B + ".json",
+                        url: "http://geo.oiorest.dk/holdepladser/" + value.leg.end_location.lat() + "," + value.leg.end_location.lng() + ".json",
                         success: function (response) {
-                            console.log(response[0]);
                             $("#takst" + index).append("<span><a target='_blank' href='http://www.rejseplanen.dk/bin/query.exe/mn?S=" + homeHoldepladsNr + "&start=yes&Z=" + response[0].navn +" '>Rejseplan til " + response[0].navn + "</a></span>")
                         }
                     });
 
                     // Add markers
-                    ll = new google.maps.LatLng(value.leg.end_location.k, value.leg.end_location.B);
+                    ll = new google.maps.LatLng(value.leg.end_location.lat(), value.leg.end_location.lng());
                     marker = new google.maps.Marker({
                         position: ll,
                         map: map,
