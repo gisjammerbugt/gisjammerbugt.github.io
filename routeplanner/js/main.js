@@ -67,6 +67,7 @@
                     origin: origin,
                     destination: arr[i].properties.samlet_adresse,
                     travelMode: google.maps.TravelMode.DRIVING,
+                    provideRouteAlternatives: true
                 },
                 custom = {
                     gid: arr[i].properties.gid,
@@ -83,7 +84,15 @@
                     return;
                 }
                 if (status === google.maps.DirectionsStatus.OK) {
-                    var leg = response.routes[0].legs[0];
+                    var temp, leg;
+                    $.each(response.routes, function (i,v) {
+                        if (temp === undefined || temp > v.legs[0].distance.value){
+                            temp = v.legs[0].distance.value;
+                            leg = v.legs[0];
+                        }
+                    });
+
+                    //var leg = response.routes[0].legs[0];
                     list.push({
                         distance: leg.distance.value,
                         request: request,
@@ -193,11 +202,19 @@
                 directionsService.route({
                     origin: origin,
                     destination: value.properties.samlet_adresse,
-                    travelMode: google.maps.TravelMode.DRIVING
+                    travelMode: google.maps.TravelMode.DRIVING,
+                    provideRouteAlternatives: true
                 }, function (response, status) {
+                    var temp;
                     if (status === google.maps.DirectionsStatus.OK) {
                         directionsDisplay.setDirections(response);
                     }
+                    $.each(response.routes, function (i,v) {
+                        if (temp === undefined || temp > v.legs[0].distance.value){
+                            temp = v.legs[0].distance.value;
+                            directionsDisplay.setRouteIndex(i);
+                        }
+                    });
                 });
 
             }
