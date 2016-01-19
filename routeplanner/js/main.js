@@ -139,8 +139,10 @@
                         value.custom.navn +
                         '<br>' +
                         value.request.destination +
+                       '<br>' +
+                        'Befordringspris 2015 : ' + (Math.round(config.befording._2015 * (value.leg.distance.value / 1000) * 100) / 100) + ' kr.' +
                         '<br>' +
-                        'Befordringspris: ' + (Math.round(config.befording * (value.leg.distance.value / 1000) * 100) / 100) + ' kr.' +
+                        'Befordringspris 2016 : ' + (Math.round(config.befording._2016 * (value.leg.distance.value / 1000) * 100) / 100) + ' kr.' +
                         '<br>' +
                         '<div class="rejseplan-link" id="takst' + index + '"></div>' +
                         '</p>' +
