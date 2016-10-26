@@ -144,6 +144,8 @@
                         '<br>' +
                         'Befordringspris 2016 : ' + (Math.round(config.befording._2016 * (value.leg.distance.value / 1000) * 100) / 100) + ' kr.' +
                         '<br>' +
+                        'Befordringspris 2017 : ' + (Math.round(config.befording._2017 * (value.leg.distance.value / 1000) * 100) / 100) + ' kr.' +
+                        '<br>' +
                         '<div class="rejseplan-link" id="takst' + index + '"></div>' +
                         '</p>' +
                         '</a></section>'
@@ -154,7 +156,7 @@
                         url: "http://eu1.mapcentia.com/cgi/proxy.cgi?url=" + encodeURIComponent(config.rejseplanenAPI + "/stopsNearby?coordX=" + value.leg.end_location.lat() + "&coordY=" + value.leg.end_location.lng() + "&maxNumber=1&format=json"),
                         //url: "http://geo.oiorest.dk/holdepladser/" + value.leg.end_location.lat() + "," + value.leg.end_location.lng() + ".json",
                         success: function (response) {
-                            $("#takst" + index).append("<span><a target='_blank' href='http://www.rejseplanen.dk/bin/query.exe/mn?S=" + homeHoldepladsNr + "&start=yes&Z=" + response.LocationList.StopLocation.id +"&time=08:00'>Rejseplan til " + response.LocationList.StopLocation.name + "</a></span>")
+                            $("#takst" + index).append("<span><a target='_blank' href='http://www.rejseplanen.dk/bin/query.exe/mn?S=" + homeHoldepladsNr + "&start=yes&Z=" + response.LocationList.StopLocation.id +"&time=07:30'>Rejseplan til " + response.LocationList.StopLocation.name + "</a></span>")
                         }
                     });
 
