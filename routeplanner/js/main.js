@@ -144,6 +144,9 @@
                         '<br>' +
                         'Befordringspris 2017 : ' + (Math.round(config.befording._2017 * (value.leg.distance.value / 1000) * 100) / 100) + ' kr. (foreløbigt 2016-niveau)' +
                         '<br>' +
+                        '<br>' +
+                        'Der betales fuld bustakst i tidsrummene 7.00-10.59 samt 13.00-17.59' +
+                        '<br>' +
                         '<div class="rejseplan-link" id="takst' + index + '"></div>' +
                         '</p>' +
                         '</a></section>'
