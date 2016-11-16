@@ -52,7 +52,7 @@ window.gc2dest = {
 {"type": "Feature", properties: {"gid": 50, speciale: "Neurolog", navn: "Einar Bech", samlet_adresse: "Ll. Sct. Mikkelsgade 4, 8800 Viborg"}},
 {"type": "Feature", properties: {"gid": 51, speciale: "Ortop\u00e6dkirurg", navn: "Bue Bak", samlet_adresse: "Lille Borgergade 27, 9400 N\u00f8rresundby"}},
 {"type": "Feature", properties: {"gid": 52, speciale: "Ortop\u00e6dkirurg", navn: "Ortop\u00e6dkirurgisk K. Sydhimmerland", samlet_adresse: "Smedevej 34, 9500 Hobro"}},
-{"type": "Feature", properties: {"gid": 53, speciale: "Ortop\u00e6dkirurg", navn: "Speciall\u00e6geselskabet K. Bundgaard", samlet_adresse: "P N\u00f8rkj\u00e6rs plads 5, 9800 Hj\u00f8rring"}},
+{"type": "Feature", properties: {"gid": 53, speciale: "Ortop\u00e6dkirurg", navn: "S\u00f8ren Kaalund Aps.", samlet_adresse: "M\u00f8lle\u00e5 1, 9000 Aalborg"}},
 {"type": "Feature", properties: {"gid": 55, speciale: "P\u00e6diater\/B\u00f8rnel\u00e6ge", navn: "Elise S. Jensen (b\u00f8rne)", samlet_adresse: "Boulevarden 9, 9000 Aalborg"}},
 {"type": "Feature", properties: {"gid": 56, speciale: "P\u00e6diater\/B\u00f8rnel\u00e6ge", navn: "Olav Bennedb\u00e6k", samlet_adresse: "Gugvej 185, 9210 Aalborg S\u00d8"}},
 {"type": "Feature", properties: {"gid": 57, speciale: "P\u00e6diater\/B\u00f8rnel\u00e6ge", navn: "Zanne Larsen", samlet_adresse: "Jyllandsgade 18, 9520 Sk\u00f8rping"}},
