@@ -8,7 +8,7 @@
 
         // Filter and sort the destinations
         $.each(gc2dest.features, function (index, value) {
-            if ($("#speciel-input").val() === value.properties.forenkletspeciale) {
+            if ($("#speciel-input").val() === value.properties.speciale) {
                 arr.push(value);
             }
         });
@@ -246,7 +246,7 @@
         });
         // Sort the destinations
         gc2dest.features.sort(function (a, b) {
-            var nameA = a.properties.forenkletspeciale.toLowerCase(), nameB = b.properties.forenkletspeciale.toLowerCase();
+            var nameA = a.properties.speciale.toLowerCase(), nameB = b.properties.speciale.toLowerCase();
             if (nameA < nameB) {
                 return -1;
             }
@@ -256,9 +256,9 @@
             return 0;
         });
         $.each(gc2dest.features, function (index, value) {
-            if (specArr.indexOf(value.properties.forenkletspeciale) === -1) {
-                specArr.push(value.properties.forenkletspeciale);
-                $("#speciel-input").append("<option value='" + value.properties.forenkletspeciale + "'>" + value.properties.forenkletspeciale + "</option>")
+            if (specArr.indexOf(value.properties.speciale) === -1) {
+                specArr.push(value.properties.speciale);
+                $("#speciel-input").append("<option value='" + value.properties.speciale + "'>" + value.properties.speciale + "</option>")
             }
         });
     }
