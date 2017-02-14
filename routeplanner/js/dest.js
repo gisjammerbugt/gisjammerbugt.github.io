@@ -3,7 +3,7 @@ window.gc2dest = {
     "features": [
 {"type": "Feature", properties: {"gid": 1, speciale: "\u00d8jenl\u00e6ge", navn: "Burton David Kamille & Anna-kirsten Kamille", samlet_adresse: "Algade 19b, 9000 Aalborg"}},
 {"type": "Feature", properties: {"gid": 2, speciale: "\u00d8jenl\u00e6ge", navn: "Poul Lange Gr\u00f8n", samlet_adresse: "Gammeltorp 2, 7700 Thisted"}},
-{"type": "Feature", properties: {"gid": 3, speciale: "\u00d8jenl\u00e6ge", navn: "Flemming Krebs S\u00f8rensen", samlet_adresse: "H l Bies Plads 9, 9500 Hobro"}},
+{"type": "Feature", properties: {"gid": 3, speciale: "\u00d8jenl\u00e6ge", navn: "\u00d8jenklinikken Hobro ved Jakob S\u00f8holt", samlet_adresse: "H l Bies Plads 9, 9500 Hobro"}},
 {"type": "Feature", properties: {"gid": 4, speciale: "\u00d8jenl\u00e6ge", navn: "Frederikshavn \u00d8jenl\u00e6gecenter Ulrich Langagergaard", samlet_adresse: "Hangaardsvej 13, 9900 Frederikshavn"}},
 {"type": "Feature", properties: {"gid": 5, speciale: "\u00d8jenl\u00e6ge", navn: "Niels Kalstrup", samlet_adresse: "John F. Kennedysplads 45, 9000 Aalborg"}},
 {"type": "Feature", properties: {"gid": 6, speciale: "\u00d8jenl\u00e6ge", navn: "Ghassan Muhammed", samlet_adresse: "M\u00f8lle\u00e5 1, 9000 Aalborg"}},
