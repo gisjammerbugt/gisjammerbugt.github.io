@@ -36,7 +36,7 @@ window.gc2dest = {
 {"type": "Feature", properties: {"gid": 33, speciale: "Banddagist", navn: "Sahva Care", samlet_adresse: "Nytorv 11, 9000 Aalborg"}},
 {"type": "Feature", properties: {"gid": 34, speciale: "Gyn\u00e6kolog", navn: "Morten Ring Aps.", samlet_adresse: "Dag Hammarskj\u00f8lds Gade 4, 9000 Aalborg"}},
 {"type": "Feature", properties: {"gid": 35, speciale: "Gyn\u00e6kolog", navn: "Anders Faurskov Nielsen", samlet_adresse: "Ved Stranden 22, 9000 Aalborg"}},
-{"type": "Feature", properties: {"gid": 36, speciale: "Hudl\u00e6ge (dermato-venerolog)", navn: "Thomas Hohwy", samlet_adresse: "Dag Hammarskj\u00f8lds Gade 4, 9000 Aalborg"}},
+{"type": "Feature", properties: {"gid": 36, speciale: "Hudl\u00e6ge", navn: "Thomas Hohwy", samlet_adresse: "Dag Hammarskj\u00f8lds Gade 4, 9000 Aalborg"}},
 {"type": "Feature", properties: {"gid": 37, speciale: "Hudl\u00e6ge", navn: "Carsten S. Mikkelsen Dermatologisk Selskab Aps.", samlet_adresse: "Bredgade 13, 9700 Br\u00f8nderslev"}},
 {"type": "Feature", properties: {"gid": 38, speciale: "Hudl\u00e6ge", navn: "Hans Lomholt og Henrik S\u00f8lvsten & Hudl\u00e6gecenter Nord", samlet_adresse: "Fyrkildevej 7, 9000 Aalborg"}},
 {"type": "Feature", properties: {"gid": 40, speciale: "Hudl\u00e6ge", navn: "Inger Louise Wildfarg", samlet_adresse: "H l Biesgade 6, 9500 Hobro"}},
