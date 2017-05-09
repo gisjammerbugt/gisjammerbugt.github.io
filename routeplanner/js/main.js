@@ -141,9 +141,9 @@
                         value.request.destination +
                        '<br>' +
                        '<br>' +
-//                        'Befordringspris 2016 : ' + parseFloat(Math.round(config.befording._2016 * (value.leg.distance.value / 1000) * 100) / 100).toFixed(2).toString().replace(".", ",") + ' kr.' +
-//                        '<br>' +
                         'Befordringspris 2017 : ' + parseFloat(Math.round(config.befording._2017 * (value.leg.distance.value / 1000) * 100) / 100).toFixed(2).toString().replace(".", ",") + ' kr.' +
+//                        '<br>' +
+//                        'Befordringspris 2018 : ' + parseFloat(Math.round(config.befording._2018 * (value.leg.distance.value / 1000) * 100) / 100).toFixed(2).toString().replace(".", ",") + ' kr.' +
                         '<br><br>' +
                         'Der betales fuld bustakst i tidsrummene 7.00-10.59 samt 13.00-17.59' +
                         '<br>' +
