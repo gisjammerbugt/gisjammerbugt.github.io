@@ -6,6 +6,7 @@ window.gc2dest = {
 {"type": "Feature", properties: {"gid": 3, speciale: "\u00d8jenl\u00e6ge", navn: "\u00d8jenklinikken Hobro ved Jakob S\u00f8holt", samlet_adresse: "H l Bies Plads 9, 9500 Hobro"}},
 {"type": "Feature", properties: {"gid": 4, speciale: "\u00d8jenl\u00e6ge", navn: "Frederikshavn \u00d8jenl\u00e6gecenter Ulrich Langagergaard", samlet_adresse: "Hangaardsvej 13, 9900 Frederikshavn"}},
 {"type": "Feature", properties: {"gid": 5, speciale: "\u00d8jenl\u00e6ge", navn: "Niels Kalstrup", samlet_adresse: "John F. Kennedysplads 45, 9000 Aalborg"}},
+{"type": "Feature", properties: {"gid": 5, speciale: "\u00d8jenl\u00e6ge", navn: "Lola Gazieva", samlet_adresse: "John F. Kennedysplads 1K, 9000 Aalborg"}},
 {"type": "Feature", properties: {"gid": 6, speciale: "\u00d8jenl\u00e6ge", navn: "Ghassan Muhammed", samlet_adresse: "M\u00f8lle\u00e5 1, 9000 Aalborg"}},
 {"type": "Feature", properties: {"gid": 7, speciale: "\u00d8jenl\u00e6ge", navn: "\u00d8jencenter Nord  v\/Henrik Vorum & Tommy B. Poulsen", samlet_adresse: "N\u00f8rrebro 12, 9800 Hj\u00f8rring"}},
 {"type": "Feature", properties: {"gid": 8, speciale: "\u00d8jenl\u00e6ge", navn: "Mette Kaas-Hansen", samlet_adresse: "N\u00f8rregade 2D, 9330 Dronninglund"}},
