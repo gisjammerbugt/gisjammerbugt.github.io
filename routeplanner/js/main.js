@@ -132,10 +132,10 @@
                         '<div class="number">' + (index + 1) + '</div>' +
                         '<h4 class="list-group-item-heading">' +
                         value.leg.distance.text +
-						' (Google)
+						' (Google)'
                         '<br>' +
                         value.leg.distance.text +
-						' (Krak)
+						' (Krak)'
                         '</h4>' +
                         '<p class="list-group-item-text">' +
                         value.custom.speciale +
