@@ -132,9 +132,9 @@
                         '<div class="number">' + (index + 1) + '</div>' +
                         '<h4 class="list-group-item-heading">' +
                         value.leg.distance.text +
-                        ' (Google)    - ' +
-                        value.leg.distance.text +
-                        ' (KRAK)' +
+//                        ' (Google)    - ' +
+//                        value.leg.distance.text +
+//                        ' (KRAK)' +
                         '</h4>' +
                         '<p class="list-group-item-text">' +
                         value.custom.speciale +
@@ -145,7 +145,7 @@
                        '<br>' +
                        '<br>' +
                         'Befordringspris 2017, Google Maps: ' + parseFloat(Math.round(config.befording._2017 * (value.leg.distance.value / 1000) * 100) / 100).toFixed(2).toString().replace(".", ",") + ' kr.' +
-                       '   - KRAK: ' + parseFloat(Math.round(config.befording._2017 * (value.leg.distance.value / 1000) * 100) / 100).toFixed(2).toString().replace(".", ",") + ' kr.' +
+//                       '   - KRAK: ' + parseFloat(Math.round(config.befording._2017 * (value.leg.distance.value / 1000) * 100) / 100).toFixed(2).toString().replace(".", ",") + ' kr.' +
 //                        '<br>' +
 //                        'Befordringspris 2018 : ' + parseFloat(Math.round(config.befording._2018 * (value.leg.distance.value / 1000) * 100) / 100).toFixed(2).toString().replace(".", ",") + ' kr.' +
                         '<br><br>' +
