@@ -132,7 +132,7 @@
                         '<div class="number">' + (index + 1) + '</div>' +
                         '<h4 class="list-group-item-heading">' +
                         value.leg.distance.text +
-                        ' (Google)    ' +
+                        ' (Google)    - ' +
                         value.leg.distance.text +
                         ' (KRAK)' +
                         '</h4>' +
