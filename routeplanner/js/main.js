@@ -142,6 +142,8 @@
                        '<br>' +
                        '<br>' +
                         'Befordringspris 2017 (beregnet ud fra Google Maps): ' + parseFloat(Math.round(config.befording._2017 * (value.leg.distance.value / 1000) * 100) / 100).toFixed(2).toString().replace(".", ",") + ' kr.' +
+                       '<br>' +
+                        'Befordringspris 2017 (beregnet ud fra KRAK): ' + parseFloat(Math.round(config.befording._2017 * (value.leg.distance.value / 1000) * 100) / 100).toFixed(2).toString().replace(".", ",") + ' kr.' +
 //                        '<br>' +
 //                        'Befordringspris 2018 : ' + parseFloat(Math.round(config.befording._2018 * (value.leg.distance.value / 1000) * 100) / 100).toFixed(2).toString().replace(".", ",") + ' kr.' +
                         '<br><br>' +
