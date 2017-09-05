@@ -132,10 +132,6 @@
                         '<div class="number">' + (index + 1) + '</div>' +
                         '<h4 class="list-group-item-heading">' +
                         value.leg.distance.text +
-						' (Google)'
-                        '<br>' +
-                        value.leg.distance.text +
-						' (Krak)'
                         '</h4>' +
                         '<p class="list-group-item-text">' +
                         value.custom.speciale +
@@ -146,10 +142,8 @@
                        '<br>' +
                        '<br>' +
                         'Befordringspris 2017 (beregnet ud fra Google Maps): ' + parseFloat(Math.round(config.befording._2017 * (value.leg.distance.value / 1000) * 100) / 100).toFixed(2).toString().replace(".", ",") + ' kr.' +
-                       '<br>' +
-                        'Befordringspris 2017 (beregnet ud fra Krak): ' + parseFloat(Math.round(config.befording._2017 * (value.leg.distance.value / 1000) * 100) / 100).toFixed(2).toString().replace(".", ",") + ' kr.' +
 //                        '<br>' +
-//                        'Befordringspris 2018 (beregnet ud fra Google Maps): ' + parseFloat(Math.round(config.befording._2018 * (value.leg.distance.value / 1000) * 100) / 100).toFixed(2).toString().replace(".", ",") + ' kr.' +
+//                        'Befordringspris 2018 : ' + parseFloat(Math.round(config.befording._2018 * (value.leg.distance.value / 1000) * 100) / 100).toFixed(2).toString().replace(".", ",") + ' kr.' +
                         '<br><br>' +
                         'Der betales fuld bustakst i tidsrummene 7.00-10.59 samt 13.00-17.59' +
                         '<br>' +
