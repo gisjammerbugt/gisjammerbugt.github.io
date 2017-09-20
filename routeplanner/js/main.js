@@ -3,7 +3,7 @@
     var map, directionsDisplay, directionsService, list = [], autocomplete, bar, modal, specArr = [], markers = [], homeMarker, geoCoder, bounds;
 
     function search(origin) {
-        var i = 0, l, cclass, arr = [], marker, infowindow, ll, homeHoldepladsNr;
+        var i = 0, l, cclass, arr = [], marker, infowindow, ll, homeHoldeplads;
         bounds = new google.maps.LatLngBounds();
 
         // Filter and sort the destinations
@@ -43,7 +43,7 @@
                     success: function (response) {
                         $("#homeTakst").empty();
                         $("#homeTakst").append("<span>Holdeplads: " + response.LocationList.StopLocation.name + "</span>")
-                        homeHoldepladsNr = response.LocationList.StopLocation.id;
+                        homeHoldeplads = response.LocationList.StopLocation.name;
                     }
                 });
             } else {
@@ -161,7 +161,7 @@
                         url: "http://eu1.mapcentia.com/cgi/proxy.cgi?url=" + encodeURIComponent(config.rejseplanenAPI + "/stopsNearby?coordX=" + value.leg.end_location.lat() + "&coordY=" + value.leg.end_location.lng() + "&maxNumber=1&format=json"),
                         //url: "http://geo.oiorest.dk/holdepladser/" + value.leg.end_location.lat() + "," + value.leg.end_location.lng() + ".json",
                         success: function (response) {
-                            $("#takst" + index).append("<span><a target='_blank' href='http://www.rejseplanen.dk/bin/query.exe/mn?S=" + homeHoldepladsNr + "&start=yes&Z=" + response.LocationList.StopLocation.id +"&time=07:30'>Rejseplan til " + response.LocationList.StopLocation.name + "</a></span>")
+                            $("#takst" + index).append("<span><a target='_blank' href='https://www.rejseplanen.dk/webapp/index.html?language=da_DA&#!S|" + homeHoldeplads + "!Z|" + response.LocationList.StopLocation.name +"!timeSel|time|7:00#!start|1'>Rejseplan til " + response.LocationList.StopLocation.name + "</a></span>")
                         }
                     });
 
