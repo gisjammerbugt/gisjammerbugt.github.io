@@ -1,6 +1,6 @@
 (function () {
     "use strict";
-    var map, directionsDisplay, directionsService, list = [], autocomplete, bar, modal, specArr = [], markers = [], homeMarker, geoCoder, bounds;
+    var map, directionsDisplay, directionsService, list = [], autocomplete, bar, modal, specArr = [], markers = [], homeMarker, geoCoder, bounds, startadress;
 
     function search(origin) {
         var i = 0, l, cclass, arr = [], marker, infowindow, ll, homeHoldeplads;
@@ -29,11 +29,11 @@
         // Set home marker from address
         geoCoder = new google.maps.Geocoder();
         geoCoder.geocode({'address': origin}, function (results, status) {
-            console.log(results);
             if (status === google.maps.GeocoderStatus.OK) {
                 homeMarker = new google.maps.Marker({
                     map: map,
                     position: results[0].geometry.location
+					startadress = results[0].formatted_address
                 });
                 bounds.extend(results[0].geometry.location);
                 // Get takstzone
@@ -162,7 +162,7 @@
                         url: "http://eu1.mapcentia.com/cgi/proxy.cgi?url=" + encodeURIComponent(config.rejseplanenAPI + "/stopsNearby?coordX=" + value.leg.end_location.lat() + "&coordY=" + value.leg.end_location.lng() + "&maxNumber=1&format=json"),
                         //url: "http://geo.oiorest.dk/holdepladser/" + value.leg.end_location.lat() + "," + value.leg.end_location.lng() + ".json",
                         success: function (response) {
-                            $("#takst" + index).append("<span><a target='_blank' href='https://www.rejseplanen.dk/webapp/index.html?language=da_DA&#!S|" + homeHoldeplads + "!Z|" + response.LocationList.StopLocation.name +"!timeSel|depart!time|07:30#!start|1'>Rejseplan til " + response.LocationList.StopLocation.name + "</a></span>")
+                            $("#takst" + index).append("<span><a target='_blank' href='https://www.rejseplanen.dk/webapp/index.html?language=da_DA&#!S|" + StartAdress + "!Z|" + response.LocationList.StopLocation.name +"!timeSel|depart!time|07:30#!start|1'>Rejseplan til " + value.request.destination + "</a></span>")
                         }
                     });
 
