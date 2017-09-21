@@ -28,7 +28,7 @@ window.gc2dest = {
 {"type": "Feature", properties: {"gid": 24, speciale: "\u00d8re\/ n\u00e6se\/ hals", navn: "Speciall\u00e6geselskabet Jette B\u00f8nneland Madsen Aps.", samlet_adresse: "Ved Stranden 22, 9000 Aalborg"}},
 {"type": "Feature", properties: {"gid": 25, speciale: "An\u00e6stesiologi", navn: "Finn Redke", samlet_adresse: "Hobrovej 42A, 9000 Aalborg"}},
 {"type": "Feature", properties: {"gid": 26, speciale: "An\u00e6stesiologi", navn: "Ivan Bo Nielsen", samlet_adresse: "Kirkegade 6, 9900 Frederikshavn"}},
-{"type": "Feature", properties: {"gid": 27, speciale: "An\u00e6stesiologi", navn: "Anders Baastrup Aps.", samlet_adresse: "Roldgade1, 9000 Aalborg"}},
+{"type": "Feature", properties: {"gid": 27, speciale: "An\u00e6stesiologi", navn: "Anders Baastrup Aps.", samlet_adresse: "Roldgade 1, 9000 Aalborg"}},
 {"type": "Feature", properties: {"gid": 28, speciale: "B\u00f8rne psyk.", navn: "B\u00f8rnepsykiatrisk Klinik Nordjylland", samlet_adresse: "Teisensvej 1, 9400 N\u00f8rresundby"}},
 {"type": "Feature", properties: {"gid": 29, speciale: "Banddagist", navn: "Guldb\u00e6k\/ Bundgaard", samlet_adresse: "Bispensgade 95, 9800 Hj\u00f8rring"}},
 {"type": "Feature", properties: {"gid": 30, speciale: "Banddagist", navn: "Sahva Blyt\u00e6k", samlet_adresse: "Blyt\u00e6kkervej 1, 9000 Aalborg"}},
