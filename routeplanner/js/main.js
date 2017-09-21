@@ -30,10 +30,10 @@
         geoCoder = new google.maps.Geocoder();
         geoCoder.geocode({'address': origin}, function (results, status) {
             if (status === google.maps.GeocoderStatus.OK) {
+		startAdress = results[0].formatted_address;
                 homeMarker = new google.maps.Marker({
                     map: map,
-                    position: results[0].geometry.location,
-		    startAdress: results[0].formatted_address
+                    position: results[0].geometry.location
                 });
                 bounds.extend(results[0].geometry.location);
                 // Get takstzone
