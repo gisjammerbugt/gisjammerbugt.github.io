@@ -162,7 +162,7 @@
                         url: "http://eu1.mapcentia.com/cgi/proxy.cgi?url=" + encodeURIComponent(config.rejseplanenAPI + "/stopsNearby?coordX=" + value.leg.end_location.lat() + "&coordY=" + value.leg.end_location.lng() + "&maxNumber=1&format=json"),
                         //url: "http://geo.oiorest.dk/holdepladser/" + value.leg.end_location.lat() + "," + value.leg.end_location.lng() + ".json",
                         success: function (response) {
-                            $("#takst" + index).append("<span><a target='_blank' href='https://www.rejseplanen.dk/webapp/index.html?language=da_DA&#!S|" + startAdress + "!Z|" + response.LocationList.StopLocation.name +"!timeSel|depart!time|07:30#!start|1'>Rejseplan til " + value.request.destination + "</a></span>")
+                            $("#takst" + index).append("<span><a target='_blank' href='https://www.rejseplanen.dk/webapp/index.html?language=da_DA&#!S|" + startAdress + "!Z|" + value.request.destination +"!timeSel|depart!time|07:30#!start|1'>Rejseplan til " + value.request.destination + "</a></span>")
                         }
                     });
 
