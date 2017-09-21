@@ -29,6 +29,7 @@
         // Set home marker from address
         geoCoder = new google.maps.Geocoder();
         geoCoder.geocode({'address': origin}, function (results, status) {
+            console.log(results);
             if (status === google.maps.GeocoderStatus.OK) {
                 homeMarker = new google.maps.Marker({
                     map: map,
