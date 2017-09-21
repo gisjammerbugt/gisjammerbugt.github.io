@@ -1,6 +1,6 @@
 (function () {
     "use strict";
-    var map, directionsDisplay, directionsService, list = [], autocomplete, bar, modal, specArr = [], markers = [], homeMarker, geoCoder, bounds, startadress;
+    var map, directionsDisplay, directionsService, list = [], autocomplete, bar, modal, specArr = [], markers = [], homeMarker, geoCoder, bounds, startAdress;
 
     function search(origin) {
         var i = 0, l, cclass, arr = [], marker, infowindow, ll, homeHoldeplads;
