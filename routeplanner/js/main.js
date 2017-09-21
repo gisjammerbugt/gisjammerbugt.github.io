@@ -33,7 +33,7 @@
                 homeMarker = new google.maps.Marker({
                     map: map,
                     position: results[0].geometry.location,
-		    startadress = results[0].formatted_address
+		    startadress: results[0].formatted_address
                 });
                 bounds.extend(results[0].geometry.location);
                 // Get takstzone
