@@ -146,8 +146,9 @@
                        '<br>' +
                        '<br>' +
                         'Befordringspris 2017, Google Maps: ' + parseFloat(Math.round(config.befording._2017 * (value.leg.distance.value / 1000) * 100) / 100).toFixed(2).toString().replace(".", ",") + ' kr.' +
+                       '<br>' +
+                        'Befordringspris 2018, Google Maps: ' + parseFloat(Math.round(config.befording._2018 * (value.leg.distance.value / 1000) * 100) / 100).toFixed(2).toString().replace(".", ",") + ' kr.' +
                        '   - KRAK: <span class="" id="krak' + index + '"></span>' +
-//                        'Befordringspris 2018 : ' + parseFloat(Math.round(config.befording._2018 * (value.leg.distance.value / 1000) * 100) / 100).toFixed(2).toString().replace(".", ",") + ' kr.' +
                         '<br><br>' +
                         'Der betales fuld bustakst i tidsrummene 7.00-10.59 samt 13.00-17.59' +
                         '<br>' +
@@ -171,7 +172,7 @@
                         //url: "http://geo.oiorest.dk/holdepladser/" + value.leg.end_location.lat() + "," + value.leg.end_location.lng() + ".json",
                         success: function (response) {
                           console.log(response["route-geometries"].features[0].properties.length);
-                            $("#krak" + index).append(parseFloat(Math.round(config.befording._2017 * (response["route-geometries"].features[0].properties.length / 1000) * 100) / 100).toFixed(2).toString().replace(".", ",") + ' kr. (' + (((response["route-geometries"].features[0].properties.length / 1000) * 100) / 100).toFixed(1).toString().replace(".", ",") + ' km)')
+                            $("#krak" + index).append(parseFloat(Math.round(config.befording._2018 * (response["route-geometries"].features[0].properties.length / 1000) * 100) / 100).toFixed(2).toString().replace(".", ",") + ' kr. (' + (((response["route-geometries"].features[0].properties.length / 1000) * 100) / 100).toFixed(1).toString().replace(".", ",") + ' km)')
                         }
                     });
 
