@@ -146,7 +146,7 @@
                        '<br>' +
                        '<br>' +
                         'Befordringspris 2017, Google Maps: ' + parseFloat(Math.round(config.befording._2017 * (value.leg.distance.value / 1000) * 100) / 100).toFixed(2).toString().replace(".", ",") + ' kr.' +
-                       '   - KRAK: <span class="" id="krak_sidst' + index + '"></span>' +
+                       '   - KRAK: <span class="" id="krak_' + index + '"></span>' +
                        '<br>' +
                         'Befordringspris 2018, Google Maps: ' + parseFloat(Math.round(config.befording._2018 * (value.leg.distance.value / 1000) * 100) / 100).toFixed(2).toString().replace(".", ",") + ' kr.' +
                        '   - KRAK: <span class="" id="krak_nu' + index + '"></span>' +
@@ -166,16 +166,6 @@
                             $("#takst" + index).append("<span><a target='_blank' href='https://www.rejseplanen.dk/webapp/index.html?language=da_DA&#!S|" + startAdress + "!Z|" + value.request.destination +"!timeSel|depart!time|07:30#!start|1'>Rejseplan til " + value.request.destination + "</a></span>")
                         }
                     });
-                    // Get Krak-distance
-                    $.ajax({
-                        dataType: 'json',
-                        url: "https://route.enirocdn.com/route/route.json?&waypoints=" + homeMarker.getPosition().lng() +"%2C" + homeMarker.getPosition().lat() +"%3B" + value.leg.end_location.lng() + "%2C" + value.leg.end_location.lat() + "&pref=SHORTEST&instr=true&res=4",
-                        //url: "http://geo.oiorest.dk/holdepladser/" + value.leg.end_location.lat() + "," + value.leg.end_location.lng() + ".json",
-                        success: function (response) {
-                          console.log(response["route-geometries"].features[0].properties.length);
-                            $("#krak_dist" + index).append(((((response["route-geometries"].features[0].properties.length / 1000) * 100) / 100).toFixed(1).toString().replace(".", ",") + ' km')
-                        }
-					});
                     // Get Krak-sidste år distance
                     $.ajax({
                         dataType: 'json',
@@ -183,7 +173,7 @@
                         //url: "http://geo.oiorest.dk/holdepladser/" + value.leg.end_location.lat() + "," + value.leg.end_location.lng() + ".json",
                         success: function (response) {
                           console.log(response["route-geometries"].features[0].properties.length);
-                            $("#krak_sidst" + index).append(parseFloat(Math.round(config.befording._2017 * (response["route-geometries"].features[0].properties.length / 1000) * 100) / 100).toFixed(2).toString().replace(".", ",") + ' kr.' + (((response["route-geometries"].features[0].properties.length / 1000) * 100) / 100).toFixed(1).toString().replace(".", ",") + ' km)')
+                            $("#krak_sidst" + index).append(parseFloat(Math.round(config.befording._2017 * (response["route-geometries"].features[0].properties.length / 1000) * 100) / 100).toFixed(2).toString().replace(".", ",") + ' kr. (' + (((response["route-geometries"].features[0].properties.length / 1000) * 100) / 100).toFixed(1).toString().replace(".", ",") + ' km)')
                         }
 					});
 					
