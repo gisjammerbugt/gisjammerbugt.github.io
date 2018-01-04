@@ -154,8 +154,6 @@
                         'Der betales fuld bustakst i tidsrummene 7.00-10.59 samt 13.00-17.59' +
                         '<br>' +
                         '<div class="rejseplan-link" id="takst' + index + '"></div>' +
-                        '<br>' +
-                        '<div class="rejseplan-link" id="KRAKKort' + index + '"></div>' +
                         '</p>' +
                         '</a></section>'
                     );
