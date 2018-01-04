@@ -173,7 +173,7 @@
                         //url: "http://geo.oiorest.dk/holdepladser/" + value.leg.end_location.lat() + "," + value.leg.end_location.lng() + ".json",
                         success: function (response) {
                           console.log(response["route-geometries"].features[0].properties.length);
-                            $("#krak_dist" + index).append((((response["route-geometries"].features[0].properties.length / 1000) * 100) / 100).toFixed(1).toString().replace(".", ",") + ' km')
+                            $("#krak_dist" + index).append((((response["route-geometries"].features[0].properties.length / 100) * 10) / 100).toFixed(1).toString().replace(".", ",") + ' km')
                         }
 		    });
                     // Get Krak-sidste år pris
