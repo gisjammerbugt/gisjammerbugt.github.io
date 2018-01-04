@@ -133,7 +133,9 @@
                         '<div class="number">' + (index + 1) + '</div>' +
                         '<h4 class="list-group-item-heading">' +
                         value.leg.distance.text +
-                        ' (Google)    - <span class="" id="krak_dist' + index + '"></span>' +
+//                        ' (Google)    - ' +
+//                        value.leg.distance.text +
+//                        ' (KRAK)' +
                         '</h4>' +
                         '<p class="list-group-item-text">' +
                         value.custom.speciale +
@@ -181,7 +183,7 @@
                         //url: "http://geo.oiorest.dk/holdepladser/" + value.leg.end_location.lat() + "," + value.leg.end_location.lng() + ".json",
                         success: function (response) {
                           console.log(response["route-geometries"].features[0].properties.length);
-                            $("#krak_sidst" + index).append(parseFloat(Math.round(config.befording._2017 * (response["route-geometries"].features[0].properties.length / 1000) * 100) / 100).toFixed(2).toString().replace(".", ",") + ' kr.')
+                            $("#krak_sidst" + index).append(parseFloat(Math.round(config.befording._2017 * (response["route-geometries"].features[0].properties.length / 1000) * 100) / 100).toFixed(2).toString().replace(".", ",") + ' kr.' + (((response["route-geometries"].features[0].properties.length / 1000) * 100) / 100).toFixed(1).toString().replace(".", ",") + ' km)')
                         }
 					});
 					
