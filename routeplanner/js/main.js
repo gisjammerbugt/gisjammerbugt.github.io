@@ -176,24 +176,24 @@
                             $("#krak_dist" + index).append((((response["route-geometries"].features[0].properties.length / 1000) * 100) / 100).toFixed(1).toString().replace(".", ",") + ' km')
                         }
 		    });
-                    // Get Krak-sidste år distance
+                    // Get Krak-sidste år pris
                     $.ajax({
                         dataType: 'json',
                         url: "https://route.enirocdn.com/route/route.json?&waypoints=" + homeMarker.getPosition().lng() +"%2C" + homeMarker.getPosition().lat() +"%3B" + value.leg.end_location.lng() + "%2C" + value.leg.end_location.lat() + "&pref=SHORTEST&instr=true&res=4",
                         //url: "http://geo.oiorest.dk/holdepladser/" + value.leg.end_location.lat() + "," + value.leg.end_location.lng() + ".json",
                         success: function (response) {
                           console.log(response["route-geometries"].features[0].properties.length);
-                            $("#krak_sidst" + index).append(parseFloat(Math.round(config.befording._2017 * (response["route-geometries"].features[0].properties.length / 1000) * 100) / 100).toFixed(2).toString().replace(".", ",") + ' kr. (' + (((response["route-geometries"].features[0].properties.length / 1000) * 100) / 100).toFixed(1).toString().replace(".", ",") + ' km)')
+                            $("#krak_sidst" + index).append(parseFloat(Math.round(config.befording._2017 * (response["route-geometries"].features[0].properties.length / 1000) * 100) / 100).toFixed(2).toString().replace(".", ",") + ' kr.')
                         }
 		    });
-                    // Get Krak-dette år distance
+                    // Get Krak-dette år pris
                     $.ajax({
                         dataType: 'json',
                         url: "https://route.enirocdn.com/route/route.json?&waypoints=" + homeMarker.getPosition().lng() +"%2C" + homeMarker.getPosition().lat() +"%3B" + value.leg.end_location.lng() + "%2C" + value.leg.end_location.lat() + "&pref=SHORTEST&instr=true&res=4",
                         //url: "http://geo.oiorest.dk/holdepladser/" + value.leg.end_location.lat() + "," + value.leg.end_location.lng() + ".json",
                         success: function (response) {
                           console.log(response["route-geometries"].features[0].properties.length);
-                            $("#krak_nu" + index).append(parseFloat(Math.round(config.befording._2018 * (response["route-geometries"].features[0].properties.length / 1000) * 100) / 100).toFixed(2).toString().replace(".", ",") + ' kr. (' + (((response["route-geometries"].features[0].properties.length / 1000) * 100) / 100).toFixed(1).toString().replace(".", ",") + ' km)')
+                            $("#krak_nu" + index).append(parseFloat(Math.round(config.befording._2018 * (response["route-geometries"].features[0].properties.length / 1000) * 100) / 100).toFixed(2).toString().replace(".", ",") + ' kr.')
                         }
 					});
 
