@@ -146,7 +146,7 @@
                        '<br>' +
                        '<br>' +
                         'Befordringspris 2017, Google Maps: ' + parseFloat(Math.round(config.befording._2017 * (value.leg.distance.value / 1000) * 100) / 100).toFixed(2).toString().replace(".", ",") + ' kr.' +
-                       '   - KRAK: <span class="" id="krak_' + index + '"></span>' +
+                       '   - KRAK: <span class="" id="krak_sidst' + index + '"></span>' +
                        '<br>' +
                         'Befordringspris 2018, Google Maps: ' + parseFloat(Math.round(config.befording._2018 * (value.leg.distance.value / 1000) * 100) / 100).toFixed(2).toString().replace(".", ",") + ' kr.' +
                        '   - KRAK: <span class="" id="krak_nu' + index + '"></span>' +
