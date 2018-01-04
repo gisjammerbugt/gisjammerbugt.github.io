@@ -153,8 +153,6 @@
                         '<br><br>' +
                         'Der betales fuld bustakst i tidsrummene 7.00-10.59 samt 13.00-17.59' +
 			'<br>' +
-			'https://map.krak.dk/?c=' + (homeMarker.getPosition().lng() + value.leg.end_location.lng())/2+','+ (homeMarker.getPosition().lat()+value.leg.end_location.lat())/2 + '&z=11&mode=route&r=car;S00;-1;'+ homeMarker.getPosition().lng() +';' + homeMarker.getPosition().lat() +';'+StartAdress+';'+ value.leg.end_location.lng() + ';' + value.leg.end_location.lat() +';' + value.request.destination +
-                        '<br>' +
                         '<div class="rejseplan-link" id="takst' + index + '"></div>' +
                         '</p>' +
                         '</a></section>'
