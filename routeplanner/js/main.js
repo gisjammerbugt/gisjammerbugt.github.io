@@ -166,16 +166,6 @@
                             $("#takst" + index).append("<span><a target='_blank' href='https://www.rejseplanen.dk/webapp/index.html?language=da_DA&#!S|" + startAdress + "!Z|" + value.request.destination +"!timeSel|depart!time|07:30#!start|1'>Rejseplan til " + value.request.destination + "</a></span>")
                         }
                     });
-                    // Get Krak link
-                    $.ajax({
-                        dataType: 'json',
-                        url: "https://route.enirocdn.com/route/route.json?&waypoints=" + homeMarker.getPosition().lng() +"%2C" + homeMarker.getPosition().lat() +"%3B" + value.leg.end_location.lng() + "%2C" + value.leg.end_location.lat() + "&pref=SHORTEST&instr=true&res=4",
-                        //url: "http://geo.oiorest.dk/holdepladser/" + value.leg.end_location.lat() + "," + value.leg.end_location.lng() + ".json",
-                        success: function (response) {
-                            $("#KRAKKort" + index).append("<span><a target='_blank' href='https://route.enirocdn.com/route/route.json?&waypoints=" + homeMarker.getPosition().lng() +"%2C" + homeMarker.getPosition().lat() +"%3B" + value.leg.end_location.lng() + "%2C" + value.leg.end_location.lat() + "&pref=SHORTEST&instr=true&res=4'>KRAK-kort til " + value.request.destination + "</a></span>")
-                        }
-		    });
-                    });
                     // Get Krak distance
                     $.ajax({
                         dataType: 'json',
