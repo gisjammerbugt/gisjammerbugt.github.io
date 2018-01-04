@@ -152,6 +152,8 @@
                        '   - KRAK: <span class="" id="krak_nu' + index + '"></span>' +
                         '<br><br>' +
                         'Der betales fuld bustakst i tidsrummene 7.00-10.59 samt 13.00-17.59' +
+			'<br>' +
+			'https://map.krak.dk/?c='
                         '<br>' +
                         '<div class="rejseplan-link" id="takst' + index + '"></div>' +
                         '</p>' +
