@@ -140,7 +140,9 @@
                         '<span class="" id="krak_dist' + index + '"></span>' +
                         ' (KRAK)' +
                         '</h4>' +
+                        '<br>' +
                         '<div class="krak-link" id="krak-link' + index + '"></div>' +
+                        '<br>' +
                         '<p class="list-group-item-text">' +
                         value.custom.speciale +
                         '<br>' +
@@ -158,8 +160,6 @@
                         'Der betales fuld bustakst i tidsrummene 7.00-10.59 samt 13.00-17.59' +
                         '<br>' +
                         '<div class="rejseplan-link" id="takst' + index + '"></div>' +
-                        '<br>' +
-                        '<div class="krak-link" id="krak-link' + index + '"></div>' +
                         '</p>' +
                         '</a></section>'
                     );
