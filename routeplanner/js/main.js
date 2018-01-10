@@ -157,14 +157,14 @@
                         'Der betales fuld bustakst i tidsrummene 7.00-10.59 samt 13.00-17.59' +
                         '<br>' +
                         '<div class="rejseplan-link" id="takst' + index + '"></div>' +
+                        '<br>' +
                         '<div class="krak-link" id="krak-link' + index + '"></div>' +
                         '</p>' +
                         '</a></section>'
                     );
                     var krakLink = "https://map.krak.dk/?c=" + ((homeMarker.getPosition().lat() + value.leg.end_location.lat()) / 2) + "," + ((homeMarker.getPosition().lng() + value.leg.end_location.lng()) / 2) + "&z=11&mode=route&r=car;S00;-1;" + homeMarker.getPosition().lat() + ";" + homeMarker.getPosition().lng() + ";" + startAdress + ";" + value.leg.end_location.lat() + ";" + value.leg.end_location.lng() + ";" + value.request.destination;
 
-                    //$("#krak-link" + index).append('<a target="_blank" href="' + krakLink + '">Krak Kort med route</a>')
-                    $("#krak-link" + index).append('<a target="_blank" href="' + krakLink + '">Krak Kort med rute" + value.request.destination + "</a>')
+                    $("#krak-link" + index).append('<a target="_blank" href="' + krakLink + '">Link til Krak Kort med ruten</a>')
                     
                     // Get takstzone
                     $.ajax({
