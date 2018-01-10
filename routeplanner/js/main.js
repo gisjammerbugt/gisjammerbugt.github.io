@@ -1,6 +1,7 @@
 (function () {
     "use strict";
-    var map, directionsDisplay, directionsService, list = [], autocomplete, bar, modal, specArr = [], markers = [], homeMarker, geoCoder, bounds, startAdress;
+    var map, directionsDisplay, directionsService, list = [], autocomplete, bar, modal, specArr = [], markers = [],
+        homeMarker, geoCoder, bounds, startAdress;
 
     function search(origin) {
         var i = 0, l, cclass, arr = [], marker, infowindow, ll, homeHoldeplads;
@@ -30,7 +31,7 @@
         geoCoder = new google.maps.Geocoder();
         geoCoder.geocode({'address': origin}, function (results, status) {
             if (status === google.maps.GeocoderStatus.OK) {
-		            startAdress = results[0].formatted_address;
+                startAdress = results[0].formatted_address;
                 homeMarker = new google.maps.Marker({
                     map: map,
                     position: results[0].geometry.location
@@ -86,8 +87,8 @@
                 }
                 if (status === google.maps.DirectionsStatus.OK) {
                     var temp, leg;
-                    $.each(response.routes, function (i,v) {
-                        if (temp === undefined || temp > v.legs[0].distance.value){
+                    $.each(response.routes, function (i, v) {
+                        if (temp === undefined || temp > v.legs[0].distance.value) {
                             temp = v.legs[0].distance.value;
                             leg = v.legs[0];
                         }
@@ -126,13 +127,15 @@
                     } else {
                         cclass = "";
                     }
+
+
                     $('#tweetContainer').append(
                         '<section><a href="javascript:void(0)" class="list-group-item ' + cclass + '" data-id=\"' +
                         value.custom.gid +
                         '">' +
                         '<div class="number">' + (index + 1) + '</div>' +
                         '<h4 class="list-group-item-heading">' +
-                        value.leg.distance.text + 
+                        value.leg.distance.text +
                         ' (Google)    - ' +
                         '<span class="" id="krak_dist' + index + '"></span>' +
                         ' (KRAK)' +
@@ -143,59 +146,64 @@
                         value.custom.navn +
                         '<br>' +
                         value.request.destination +
-                       '<br>' +
-                       '<br>' +
+                        '<br>' +
+                        '<br>' +
                         'Befordringspris 2017, Google Maps: ' + parseFloat(Math.round(config.befording._2017 * (value.leg.distance.value / 1000) * 100) / 100).toFixed(2).toString().replace(".", ",") + ' kr.' +
-                       '   - KRAK: <span class="" id="krak_sidst' + index + '"></span>' +
-                       '<br>' +
+                        '   - KRAK: <span class="" id="krak_sidst' + index + '"></span>' +
+                        '<br>' +
                         'Befordringspris 2018, Google Maps: ' + parseFloat(Math.round(config.befording._2018 * (value.leg.distance.value / 1000) * 100) / 100).toFixed(2).toString().replace(".", ",") + ' kr.' +
-                       '   - KRAK: <span class="" id="krak_nu' + index + '"></span>' +
+                        '   - KRAK: <span class="" id="krak_nu' + index + '"></span>' +
                         '<br><br>' +
                         'Der betales fuld bustakst i tidsrummene 7.00-10.59 samt 13.00-17.59' +
-			'<br>' +
+                        '<br>' +
                         '<div class="rejseplan-link" id="takst' + index + '"></div>' +
+                        '<div class="krak-link" id="krak-link' + index + '"></div>' +
                         '</p>' +
                         '</a></section>'
                     );
+                    var krakLink = "https://map.krak.dk/?c=" + ((homeMarker.getPosition().lat() + value.leg.end_location.lat()) / 2) + "," + ((homeMarker.getPosition().lng() + value.leg.end_location.lng()) / 2) + "&z=11&mode=route&r=car;S00;-1;" + homeMarker.getPosition().lat() + ";" + homeMarker.getPosition().lng() + ";" + startAdress + ";" + value.leg.end_location.lat() + ";" + value.leg.end_location.lng() + ";" + value.request.destination;
+
+                    $("#krak-link" + index).append('<a target="_blank" href="' + krakLink + '">Krak Kort med route</a>')
+
                     // Get takstzone
                     $.ajax({
                         dataType: 'json',
                         url: "http://eu1.mapcentia.com/cgi/proxy.cgi?url=" + encodeURIComponent(config.rejseplanenAPI + "/stopsNearby?coordX=" + value.leg.end_location.lat() + "&coordY=" + value.leg.end_location.lng() + "&maxNumber=1&format=json"),
                         //url: "http://geo.oiorest.dk/holdepladser/" + value.leg.end_location.lat() + "," + value.leg.end_location.lng() + ".json",
                         success: function (response) {
-                            $("#takst" + index).append("<span><a target='_blank' href='https://www.rejseplanen.dk/webapp/index.html?language=da_DA&#!S|" + startAdress + "!Z|" + value.request.destination +"!timeSel|depart!time|07:30#!start|1'>Rejseplan til " + value.request.destination + "</a></span>")
+                            $("#takst" + index).append("<span><a target='_blank' href='https://www.rejseplanen.dk/webapp/index.html?language=da_DA&#!S|" + startAdress + "!Z|" + value.request.destination + "!timeSel|depart!time|07:30#!start|1'>Rejseplan til " + value.request.destination + "</a></span>")
                         }
                     });
                     // Get Krak distance
                     $.ajax({
                         dataType: 'json',
-                        url: "https://route.enirocdn.com/route/route.json?&waypoints=" + homeMarker.getPosition().lng() +"%2C" + homeMarker.getPosition().lat() +"%3B" + value.leg.end_location.lng() + "%2C" + value.leg.end_location.lat() + "&pref=SHORTEST&instr=true&res=4",
+                        url: "https://route.enirocdn.com/route/route.json?&waypoints=" + homeMarker.getPosition().lng() + "%2C" + homeMarker.getPosition().lat() + "%3B" + value.leg.end_location.lng() + "%2C" + value.leg.end_location.lat() + "&pref=SHORTEST&instr=true&res=4",
                         //url: "http://geo.oiorest.dk/holdepladser/" + value.leg.end_location.lat() + "," + value.leg.end_location.lng() + ".json",
                         success: function (response) {
-                          console.log(response["route-geometries"].features[0].properties.length);
+                            console.log(response["route-geometries"].features[0].properties.length);
                             $("#krak_dist" + index).append((((response["route-geometries"].features[0].properties.length / 100) * 10) / 100).toFixed(1).toString().replace(".", ",") + ' km')
                         }
-		    });
+                    });
                     // Get Krak-sidste år pris
                     $.ajax({
                         dataType: 'json',
-                        url: "https://route.enirocdn.com/route/route.json?&waypoints=" + homeMarker.getPosition().lng() +"%2C" + homeMarker.getPosition().lat() +"%3B" + value.leg.end_location.lng() + "%2C" + value.leg.end_location.lat() + "&pref=SHORTEST&instr=true&res=4",
+                        url: "https://route.enirocdn.com/route/route.json?&waypoints=" + homeMarker.getPosition().lng() + "%2C" + homeMarker.getPosition().lat() + "%3B" + value.leg.end_location.lng() + "%2C" + value.leg.end_location.lat() + "&pref=SHORTEST&instr=true&res=4",
                         //url: "http://geo.oiorest.dk/holdepladser/" + value.leg.end_location.lat() + "," + value.leg.end_location.lng() + ".json",
                         success: function (response) {
-                          console.log(response["route-geometries"].features[0].properties.length);
+                            console.log(response["route-geometries"].features[0].properties.length);
                             $("#krak_sidst" + index).append(parseFloat(Math.round(config.befording._2017 * (response["route-geometries"].features[0].properties.length / 1000) * 100) / 100).toFixed(2).toString().replace(".", ",") + ' kr.')
                         }
-		    });
+                    });
                     // Get Krak-dette år pris
                     $.ajax({
                         dataType: 'json',
-                        url: "https://route.enirocdn.com/route/route.json?&waypoints=" + homeMarker.getPosition().lng() +"%2C" + homeMarker.getPosition().lat() +"%3B" + value.leg.end_location.lng() + "%2C" + value.leg.end_location.lat() + "&pref=SHORTEST&instr=true&res=4",
+                        url: "https://route.enirocdn.com/route/route.json?&waypoints=" + homeMarker.getPosition().lng() + "%2C" + homeMarker.getPosition().lat() + "%3B" + value.leg.end_location.lng() + "%2C" + value.leg.end_location.lat() + "&pref=SHORTEST&instr=true&res=4",
                         //url: "http://geo.oiorest.dk/holdepladser/" + value.leg.end_location.lat() + "," + value.leg.end_location.lng() + ".json",
                         success: function (response) {
-                          console.log(response["route-geometries"].features[0].properties.length);
+                            console.log(response["route-geometries"].features[0].properties.length);
                             $("#krak_nu" + index).append(parseFloat(Math.round(config.befording._2018 * (response["route-geometries"].features[0].properties.length / 1000) * 100) / 100).toFixed(2).toString().replace(".", ",") + ' kr.')
                         }
-					});
+                    });
 
                     // Add markers
                     ll = new google.maps.LatLng(value.leg.end_location.lat(), value.leg.end_location.lng());
@@ -250,8 +258,8 @@
                     if (status === google.maps.DirectionsStatus.OK) {
                         directionsDisplay.setDirections(response);
                     }
-                    $.each(response.routes, function (i,v) {
-                        if (temp === undefined || temp > v.legs[0].distance.value){
+                    $.each(response.routes, function (i, v) {
+                        if (temp === undefined || temp > v.legs[0].distance.value) {
                             temp = v.legs[0].distance.value;
                             directionsDisplay.setRouteIndex(i);
                         }
