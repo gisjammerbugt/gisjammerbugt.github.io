@@ -140,6 +140,7 @@
                         '<span class="" id="krak_dist' + index + '"></span>' +
                         ' (KRAK)' +
                         '</h4>' +
+                        '<div class="krak-link" id="krak-link' + index + '"></div>' +
                         '<p class="list-group-item-text">' +
                         value.custom.speciale +
                         '<br>' +
