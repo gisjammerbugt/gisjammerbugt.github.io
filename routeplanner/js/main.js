@@ -163,8 +163,9 @@
                     );
                     var krakLink = "https://map.krak.dk/?c=" + ((homeMarker.getPosition().lat() + value.leg.end_location.lat()) / 2) + "," + ((homeMarker.getPosition().lng() + value.leg.end_location.lng()) / 2) + "&z=11&mode=route&r=car;S00;-1;" + homeMarker.getPosition().lat() + ";" + homeMarker.getPosition().lng() + ";" + startAdress + ";" + value.leg.end_location.lat() + ";" + value.leg.end_location.lng() + ";" + value.request.destination;
 
-                    $("#krak-link" + index).append('<a target="_blank" href="' + krakLink + '">Krak Kort med route</a>')
-
+                    //$("#krak-link" + index).append('<a target="_blank" href="' + krakLink + '">Krak Kort med route</a>')
+                    $("#krak-link" + index).append('<a target="_blank" href="' + krakLink + '">Krak Kort med rute" + value.request.destination + "</a>')
+                    
                     // Get takstzone
                     $.ajax({
                         dataType: 'json',
