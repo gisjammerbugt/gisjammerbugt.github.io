@@ -151,9 +151,9 @@
                         '<br>' +
                         'Befordringspris 2018, Google Maps: ' + parseFloat(Math.round(config.befording._2018 * (value.leg.distance.value / 1000) * 100) / 100).toFixed(2).toString().replace(".", ",") + ' kr.' +
                         '   - KRAK: <span class="" id="krak_sidst' + index + '"></span>' +
-                        //'<br>' +
-                        //'Befordringspris 2019, Google Maps: ' + parseFloat(Math.round(config.befording._2019 * (value.leg.distance.value / 1000) * 100) / 100).toFixed(2).toString().replace(".", ",") + ' kr.' +
-                        //'   - KRAK: <span class="" id="krak_nu' + index + '"></span>' +
+                        '<br>' +
+                        'Befordringspris 2019, Google Maps: ' + parseFloat(Math.round(config.befording._2019 * (value.leg.distance.value / 1000) * 100) / 100).toFixed(2).toString().replace(".", ",") + ' kr.' +
+                        '   - KRAK: <span class="" id="krak_nu' + index + '"></span>' +
                         '<br><br>' +
                         '<div class="krak-link" id="krak-link' + index + '"></div>' +
                         '<br>' +
@@ -193,7 +193,7 @@
                         //url: "http://geo.oiorest.dk/holdepladser/" + value.leg.end_location.lat() + "," + value.leg.end_location.lng() + ".json",
                         success: function (response) {
                             console.log(response["route-geometries"].features[0].properties.length);
-                            $("#krak_sidst" + index).append(parseFloat(Math.round(config.befording._2017 * (response["route-geometries"].features[0].properties.length / 1000) * 100) / 100).toFixed(2).toString().replace(".", ",") + ' kr.')
+                            $("#krak_sidst" + index).append(parseFloat(Math.round(config.befording._2018 * (response["route-geometries"].features[0].properties.length / 1000) * 100) / 100).toFixed(2).toString().replace(".", ",") + ' kr.')
                         }
                     });
                     // Get Krak-dette år pris
@@ -203,7 +203,7 @@
                         //url: "http://geo.oiorest.dk/holdepladser/" + value.leg.end_location.lat() + "," + value.leg.end_location.lng() + ".json",
                         success: function (response) {
                             console.log(response["route-geometries"].features[0].properties.length);
-                            $("#krak_nu" + index).append(parseFloat(Math.round(config.befording._2018 * (response["route-geometries"].features[0].properties.length / 1000) * 100) / 100).toFixed(2).toString().replace(".", ",") + ' kr.')
+                            $("#krak_nu" + index).append(parseFloat(Math.round(config.befording._2019 * (response["route-geometries"].features[0].properties.length / 1000) * 100) / 100).toFixed(2).toString().replace(".", ",") + ' kr.')
                         }
                     });
 
