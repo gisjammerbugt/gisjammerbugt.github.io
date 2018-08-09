@@ -165,7 +165,7 @@
                     );
                     var krakLink = "https://map.krak.dk/?c=" + ((homeMarker.getPosition().lat() + value.leg.end_location.lat()) / 2) + "," + ((homeMarker.getPosition().lng() + value.leg.end_location.lng()) / 2) + "&z=11&mode=route&r=car;S00;-1;" + homeMarker.getPosition().lat() + ";" + homeMarker.getPosition().lng() + ";" + startAdress + ";" + value.leg.end_location.lat() + ";" + value.leg.end_location.lng() + ";" + value.request.destination;
 
-                    $("#krak-link" + index).append('<a target="_blank" href="' + krakLink + '">Link til Krak Kort med ruten</a>')
+                    $("#krak-link" + index).append('<a target="_blank" href="' + krakLink + '">Link til Krak.dk med DERES forslag til rute.</a>')
                     
                     // Get takstzone
                     $.ajax({
