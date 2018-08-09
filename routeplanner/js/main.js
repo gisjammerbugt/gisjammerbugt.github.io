@@ -150,10 +150,13 @@
                         '<br>' +
                         '<br>' +
                         'Befordringspris 2018, Google Maps: ' + parseFloat(Math.round(config.befording._2018 * (value.leg.distance.value / 1000) * 100) / 100).toFixed(2).toString().replace(".", ",") + ' kr.' +
-                        '   - KRAK: <span class="" id="krak_sidst' + index + '"></span>' +
-                        '<br>' +
-                        '(Befordringspris 2019, Google Maps: ' + parseFloat(Math.round(config.befording._2019 * (value.leg.distance.value / 1000) * 100) / 100).toFixed(2).toString().replace(".", ",") + ' kr.' +
-                        '   - KRAK: <span class="" id="krak_nu' + index + '"></span>)' +
+                        '   - KRAK: <span class="" id="krak_2018' + index + '"></span>' +
+                        //'<br>' +
+                        //'Befordringspris 2019, Google Maps: ' + parseFloat(Math.round(config.befording._2019 * (value.leg.distance.value / 1000) * 100) / 100).toFixed(2).toString().replace(".", ",") + ' kr.' +
+                        //'   - KRAK: <span class="" id="krak_2019' + index + '"></span>' +
+                        //'<br>' +
+                        //'Befordringspris 2020, Google Maps: ' + parseFloat(Math.round(config.befording._2020 * (value.leg.distance.value / 1000) * 100) / 100).toFixed(2).toString().replace(".", ",") + ' kr.' +
+                        //'   - KRAK: <span class="" id="krak_2020' + index + '"></span>' +
                         '<br><br>' +
                         '<div class="krak-link" id="krak-link' + index + '"></div>' +
                         '<br>' +
@@ -186,24 +189,34 @@
                             $("#krak_dist" + index).append((((response["route-geometries"].features[0].properties.length / 100) * 10) / 100).toFixed(1).toString().replace(".", ",") + ' km')
                         }
                     });
-                    // Get Krak-sidste år pris
+                    // Get Krak-2018 år pris
                     $.ajax({
                         dataType: 'json',
                         url: "https://route.enirocdn.com/route/route.json?&waypoints=" + homeMarker.getPosition().lng() + "%2C" + homeMarker.getPosition().lat() + "%3B" + value.leg.end_location.lng() + "%2C" + value.leg.end_location.lat() + "&pref=SHORTEST&instr=true&res=4",
                         //url: "http://geo.oiorest.dk/holdepladser/" + value.leg.end_location.lat() + "," + value.leg.end_location.lng() + ".json",
                         success: function (response) {
                             console.log(response["route-geometries"].features[0].properties.length);
-                            $("#krak_sidst" + index).append(parseFloat(Math.round(config.befording._2018 * (response["route-geometries"].features[0].properties.length / 1000) * 100) / 100).toFixed(2).toString().replace(".", ",") + ' kr.')
+                            $("#krak_2018" + index).append(parseFloat(Math.round(config.befording._2018 * (response["route-geometries"].features[0].properties.length / 1000) * 100) / 100).toFixed(2).toString().replace(".", ",") + ' kr.')
                         }
                     });
-                    // Get Krak-dette år pris
+                    // Get Krak-2019 år pris
                     $.ajax({
                         dataType: 'json',
                         url: "https://route.enirocdn.com/route/route.json?&waypoints=" + homeMarker.getPosition().lng() + "%2C" + homeMarker.getPosition().lat() + "%3B" + value.leg.end_location.lng() + "%2C" + value.leg.end_location.lat() + "&pref=SHORTEST&instr=true&res=4",
                         //url: "http://geo.oiorest.dk/holdepladser/" + value.leg.end_location.lat() + "," + value.leg.end_location.lng() + ".json",
                         success: function (response) {
                             console.log(response["route-geometries"].features[0].properties.length);
-                            $("#krak_nu" + index).append(parseFloat(Math.round(config.befording._2019 * (response["route-geometries"].features[0].properties.length / 1000) * 100) / 100).toFixed(2).toString().replace(".", ",") + ' kr.')
+                            $("#krak_2019" + index).append(parseFloat(Math.round(config.befording._2019 * (response["route-geometries"].features[0].properties.length / 1000) * 100) / 100).toFixed(2).toString().replace(".", ",") + ' kr.')
+                        }
+                    });
+                    // Get Krak-2020 år pris
+                    $.ajax({
+                        dataType: 'json',
+                        url: "https://route.enirocdn.com/route/route.json?&waypoints=" + homeMarker.getPosition().lng() + "%2C" + homeMarker.getPosition().lat() + "%3B" + value.leg.end_location.lng() + "%2C" + value.leg.end_location.lat() + "&pref=SHORTEST&instr=true&res=4",
+                        //url: "http://geo.oiorest.dk/holdepladser/" + value.leg.end_location.lat() + "," + value.leg.end_location.lng() + ".json",
+                        success: function (response) {
+                            console.log(response["route-geometries"].features[0].properties.length);
+                            $("#krak_2020" + index).append(parseFloat(Math.round(config.befording._2020 * (response["route-geometries"].features[0].properties.length / 1000) * 100) / 100).toFixed(2).toString().replace(".", ",") + ' kr.')
                         }
                     });
 
