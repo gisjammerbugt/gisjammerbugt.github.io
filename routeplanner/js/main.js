@@ -151,9 +151,9 @@
                         '<br>' +
                         'Befordringspris 2018, Google Maps: ' + parseFloat(Math.round(config.befording._2018 * (value.leg.distance.value / 1000) * 100) / 100).toFixed(2).toString().replace(".", ",") + ' kr.' +
                         '   - KRAK: <span class="" id="krak_2018' + index + '"></span>' +
-                        //'<br>' +
-                        //'Befordringspris 2019, Google Maps: ' + parseFloat(Math.round(config.befording._2019 * (value.leg.distance.value / 1000) * 100) / 100).toFixed(2).toString().replace(".", ",") + ' kr.' +
-                        //'   - KRAK: <span class="" id="krak_2019' + index + '"></span>' +
+                        '<br>' +
+                        'Befordringspris 2019, Google Maps: ' + parseFloat(Math.round(config.befording._2019 * (value.leg.distance.value / 1000) * 100) / 100).toFixed(2).toString().replace(".", ",") + ' kr.' +
+                        '   - KRAK: <span class="" id="krak_2019' + index + '"></span>' +
                         //'<br>' +
                         //'Befordringspris 2020, Google Maps: ' + parseFloat(Math.round(config.befording._2020 * (value.leg.distance.value / 1000) * 100) / 100).toFixed(2).toString().replace(".", ",") + ' kr.' +
                         //'   - KRAK: <span class="" id="krak_2020' + index + '"></span>' +
