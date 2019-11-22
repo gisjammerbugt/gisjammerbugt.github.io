@@ -46,6 +46,7 @@ window.gc2dest = {
 {"type": "Feature", properties: {"gid": 43, speciale: "Intern Mediciner", navn: "Hans Chr. Hoeck", samlet_adresse: "Jernbanegade 21, 9000 Aalborg"}},
 {"type": "Feature", properties: {"gid": 44, speciale: "Intern Mediciner", navn: "Geert T. Espersen", samlet_adresse: "John F. Kennedysplads 1K, 9000 Aalborg"}},
 {"type": "Feature", properties: {"gid": 45, speciale: "Intern Mediciner", navn: "Geert T. Espersen", samlet_adresse: "Sygehusvej 6, 9460 Brovst"}},
+{"type": "Feature", properties: {"gid": 46, speciale: "Kirurg", navn: "Bella Kirurgi", samlet_adresse: "Sygehusvej 22, 9460 Brovst"}},
 {"type": "Feature", properties: {"gid": 46, speciale: "Kirurg", navn: "Mads Mark, Kirurisk Klinik", samlet_adresse: "Bispensgade 10, 9000 Aalborg"}},
 {"type": "Feature", properties: {"gid": 47, speciale: "Kirurg", navn: "Bruno Nyholm Jensen", samlet_adresse: "Ved Stranden 22, 9000 Aalborg"}},
 {"type": "Feature", properties: {"gid": 48, speciale: "Neurokirurg", navn: "Flemming Bang", samlet_adresse: "Brotorvet 4, 9400 N\u00f8rresundby"}},
