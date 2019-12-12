@@ -154,7 +154,7 @@
                         '<br>' +
                         'Befordringspris 2020, Google Maps: ' + parseFloat(Math.round(config.befording._2020 * (value.leg.distance.value / 1000) * 100) / 100).toFixed(2).toString().replace(".", ",") + ' kr.' +
                         '   - KRAK: <span class="" id="krak_2020' + index + '"></span>' +
-                        '<br>' +
+                        //'<br>' +
                         //'Befordringspris 2021, Google Maps: ' + parseFloat(Math.round(config.befording._2021 * (value.leg.distance.value / 1000) * 100) / 100).toFixed(2).toString().replace(".", ",") + ' kr.' +
                         //'   - KRAK: <span class="" id="krak_2021' + index + '"></span>' +
                         '<br><br>' +
