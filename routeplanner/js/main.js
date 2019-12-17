@@ -157,12 +157,12 @@
                         //'<br>' +
                         //'Befordringspris 2021, Google Maps: ' + parseFloat(Math.round(config.befording._2021 * (value.leg.distance.value / 1000) * 100) / 100).toFixed(2).toString().replace(".", ",") + ' kr.' +
                         //'   - KRAK: <span class="" id="krak_2021' + index + '"></span>' +
-                        '<br>' +
-                        '<div class="rejseplan-link" id="takst' + index + '"></div>' +
-                        '<br>' +
+                       '<br>' +
                         '<div class="krak-link" id="krak-link' + index + '"></div>' +
                         '<br>' +
                         'Der betales fuld bustakst i tidsrummene 7.00-10.59 samt 13.00-17.59' +
+                         '<br>' +
+                        '<div class="rejseplan-link" id="takst' + index + '"></div>' +
                         '</p>' +
                         '</a></section>'
                     );
