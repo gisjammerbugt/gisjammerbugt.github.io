@@ -53,6 +53,7 @@ window.gc2dest = {
 {"type": "Feature", properties: {"gid": 48, speciale: "Neurokirurg", navn: "Flemming Bang", samlet_adresse: "Brotorvet 4, 9400 N\u00f8rresundby"}},
 {"type": "Feature", properties: {"gid": 49, speciale: "Neurolog", navn: "Neurologisk Speciall\u00e6ge Martin T\u00f8ttrup Kelkelund ApS", samlet_adresse: "Tolstrupvej 91, 9700 Br\u00f8nderslev"}},
 {"type": "Feature", properties: {"gid": 50, speciale: "Neurolog", navn: "Einar Bech", samlet_adresse: "Hans Hartvig Seedorffs Str\u00e6de 3, 8000 Aarhus C"}},
+{"type": "Feature", properties: {"gid": 50, speciale: "Neurolog", navn: "Neurohuset Olga Antropova", samlet_adresse: "Toldboden 1, 2 sal, A2, 8800 Viborg"}},
 {"type": "Feature", properties: {"gid": 51, speciale: "Ortop\u00e6dkirurg", navn: "Bue Bak", samlet_adresse: "Lille Borgergade 27, 9400 N\u00f8rresundby"}},
 {"type": "Feature", properties: {"gid": 52, speciale: "Ortop\u00e6dkirurg", navn: "Ortop\u00e6dkirurgisk K. Sydhimmerland", samlet_adresse: "Smedevej 34, 9500 Hobro"}},
 {"type": "Feature", properties: {"gid": 53, speciale: "Ortop\u00e6dkirurg", navn: "S\u00f8ren Kaalund Aps.", samlet_adresse: "M\u00f8lle\u00e5 1, 9000 Aalborg"}},
