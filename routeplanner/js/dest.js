@@ -15,7 +15,7 @@ window.gc2dest = {
 {"type": "Feature", properties: {"gid": 11, speciale: "\u00d8jenl\u00e6ge", navn: "Kim Frost , \u00f8jenl\u00e6ge, dr.med.", samlet_adresse: "Strandparken 48, 7900 Nyk\u00f8bing M"}},
 {"type": "Feature", properties: {"gid": 12, speciale: "\u00d8jenl\u00e6ge", navn: "Vendsyssel \u00D8jenklinik", samlet_adresse: "Tolstrupvej 91, 9700 Br\u00f8nderslev"}},
 {"type": "Feature", properties: {"gid": 13, speciale: "\u00d8jenl\u00e6ge", navn: "Niels Busted", samlet_adresse: "Tordenskjoldsgade 9E, 9900 Frederikshavn"}},
-{"type": "Feature", properties: {"gid": 14, speciale: "\u00d8jenl\u00e6ge", navn: "Jens Bach Andersen Aps.", samlet_adresse: "Vesterbro 63, 9000 Aalborg"}},
+{"type": "Feature", properties: {"gid": 14, speciale: "\u00d8jenl\u00e6ge", navn: "\u00d8jenl\u00e6ge Marianne Karmisholt", samlet_adresse: "Vesterbro 63, 9000 Aalborg"}},
 {"type": "Feature", properties: {"gid": 15, speciale: "\u00d8re\/ n\u00e6se\/ hals", navn: "Henrik Geneflk Aps.", samlet_adresse: "\u00d8ster\u00e5gade 13, 9000 Aalborg"}},
 {"type": "Feature", properties: {"gid": 16, speciale: "\u00d8re\/ n\u00e6se\/ hals", navn: "Henrik Fr\u00f8lund Korsholm Aps.", samlet_adresse: "Asylgade 13, 9900 Frederikshavn"}},
 {"type": "Feature", properties: {"gid": 17, speciale: "\u00d8re\/ n\u00e6se\/ hals", navn: "\u00d8re- n\u00e6se- halsklinikken Budolfi Plads", samlet_adresse: "Budolfi Plads 1, 9000 Aalborg"}},
