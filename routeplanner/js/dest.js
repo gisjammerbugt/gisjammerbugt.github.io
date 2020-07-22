@@ -75,7 +75,7 @@ window.gc2dest = {
 {"type": "Feature", properties: {"gid": 72, speciale: "Psykiater", navn: "J\u00f8rn Iversen", samlet_adresse: "Dag Hammarskj\u00f8lds Gade 4, 9000 Aalborg"}},
 {"type": "Feature", properties: {"gid": 73, speciale: "Psykiater", navn: "Bjarne L. Christensen", samlet_adresse: "Klokkest\u00f8bergade 17, 9000 Aalborg"}},
 {"type": "Feature", properties: {"gid": 74, speciale: "Psykiater", navn: "Hans Henrik Wernlund", samlet_adresse: "Str\u00f8mgade 8, 9800 Hj\u00f8rring"}},
-{"type": "Feature", properties: {"gid": 75, speciale: "Psykiater", navn: "Lien  og Guldb\u00e6k", samlet_adresse: "Ved stranden 11d, 9000 Aalborg"}},
+{"type": "Feature", properties: {"gid": 75, speciale: "Psykiater", navn: "Speciall\u00e6gerne i psykiatri Lien  og Guldb\u00e6k", samlet_adresse: "Bygaden 24a, 9000 Aalborg"}},
 {"type": "Feature", properties: {"gid": 76, speciale: "Psykiater", navn: "S\u00f8ren \u00d8rnberg", samlet_adresse: "Ving\u00e5rdsgade 9, 9000 Aalborg"}},
 {"type": "Feature", properties: {"gid": 77, speciale: "Reumatolog", navn: "Reumatologisk Klinik", samlet_adresse: "Fyrkildevej 7, 9220 Aalborg \u00d8st"}},
 {"type": "Feature", properties: {"gid": 78, speciale: "Reumatolog", navn: "Reuma Nord, v/Jens Lykkegaard Olesen", samlet_adresse: "John F. Kennedys Plads 1R, 4., 9000 Aalborg \u00d8st"}},
